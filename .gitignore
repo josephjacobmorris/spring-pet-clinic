@@ -31,3 +31,5 @@ hs_err_pid*
 /pet-clinic-webapp/target/
 /pet-clinic-data/target/
 /target/
+/.idea/workspace.xml
+/.idea/

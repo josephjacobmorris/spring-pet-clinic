@@ -28,3 +28,6 @@ hs_err_pid*
 /.idea/vcs.xml
 /.idea/misc.xml
 /.idea/uiDesigner.xml
+/pet-clinic-webapp/target/
+/pet-clinic-data/target/
+/target/

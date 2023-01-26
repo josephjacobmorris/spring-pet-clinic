@@ -1,5 +1,7 @@
 package com.example.services;
 
 
-public interface OwnerService<Owner,Long> extends PersonService<Owner,Long>{
+import com.example.model.Owner;
+
+public interface OwnerService extends PersonService<Owner,Long>{
 }

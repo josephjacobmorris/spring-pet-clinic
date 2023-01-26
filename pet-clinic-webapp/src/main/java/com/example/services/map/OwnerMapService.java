@@ -5,7 +5,7 @@ import com.example.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerMapService  extends AbstractMapService<Owner, Long> implements OwnerService<Owner, Long> {
+public class OwnerMapService  extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Owner findByLastName(String lastName) {
         Set<Owner> owners = super.findAll();

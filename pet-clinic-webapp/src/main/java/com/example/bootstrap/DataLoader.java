@@ -38,6 +38,8 @@ public class DataLoader implements CommandLineRunner {
         Pet mikesPet = new Pet();
         mikesPet.setOwner(owner1);
         mikesPet.setBirthDate(LocalDate.now());
+        ownerService.save(owner1);
+
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");

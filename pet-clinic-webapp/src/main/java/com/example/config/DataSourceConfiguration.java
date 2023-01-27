@@ -1,16 +1,17 @@
 package com.example.config;
 
 import com.example.datasources.FakeDataSource;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+@EnableConfigurationProperties(FakeDataSource.class)
 @PropertySource("classpath:datasource.properties")
 @Configuration
 public class DataSourceConfiguration {
     @Bean
-    FakeDataSource fakeDataSource(@Value("${ds.username}") String username, @Value("${ds.password}") String password, @Value("${ds.jdbcUrl}") String jdbcUrl) {
-        return new FakeDataSource(username, password, jdbcUrl);
+    FakeDataSource fakeDataSource(FakeDataSource fakeDataSource) {
+        return new FakeDataSource(fakeDataSource.getUsername(), fakeDataSource.getPassword(), fakeDataSource.getJdbcUrl());
     }
 }

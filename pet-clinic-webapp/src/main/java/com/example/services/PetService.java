@@ -1,4 +1,6 @@
 package com.example.services;
 
-public interface PetService<Pet, Long> extends CrudService<Pet, Long> {
+import com.example.model.Pet;
+
+public interface PetService extends CrudService<Pet, Long> {
 }

@@ -5,6 +5,7 @@ import com.example.model.Pet;
 import com.example.model.PetType;
 import com.example.model.Vet;
 import com.example.services.OwnerService;
+import com.example.services.PetTypeService;
 import com.example.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,9 +18,12 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    private final PetTypeService petTypeService;
+
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
@@ -28,6 +32,15 @@ public class DataLoader implements CommandLineRunner {
     }
 
     public void loadData() {
+        PetType dogPetType = new PetType();
+        dogPetType.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dogPetType);
+
+        PetType catPetType = new PetType();
+        dogPetType.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(catPetType);
+
+
         PetType dog = new PetType();
         dog.setName("Dog");
         PetType cat = new PetType();

@@ -2,6 +2,7 @@ package com.example.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@EqualsAndHashCode(exclude = {"owner"}, callSuper = false)
 @Table(name = "pets")
 public class Pet extends BaseEntity{
     @Column(name = "name")

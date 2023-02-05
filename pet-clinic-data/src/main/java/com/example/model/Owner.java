@@ -2,12 +2,14 @@ package com.example.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @Entity
+@EqualsAndHashCode(exclude = {"pets"}, callSuper = false)
 @Table(name = "owners")
 public class Owner extends Person{
     @Column(name = "address")
